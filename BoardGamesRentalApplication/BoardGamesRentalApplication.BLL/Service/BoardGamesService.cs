@@ -53,6 +53,8 @@ namespace BoardGamesRentalApplication.BLL.Service
                 edited.MaxPlayerCount = boardGame.MaxPlayerCount;
                 edited.GameTimeInMinutes = boardGame.GameTimeInMinutes;
                 edited.BoardGameCategoryId = boardGame.BoardGameCategoryId;
+                edited.ImagePath = boardGame.ImagePath;
+                edited.DetailsImagePath = boardGame.DetailsImagePath;
 
                 boardGameRepository.Edit(edited);
                 boardGameRepository.SaveChanges();
