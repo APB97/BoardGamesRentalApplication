@@ -26,7 +26,21 @@ namespace BoardGamesRentalApplication.Controllers
         // GET: User/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            DAL.Models.User userToUpdate = userService.GetById(id);
+            User user = new User
+            {
+                UserId = userToUpdate.UserId,
+                FirstName = userToUpdate.FirstName,
+                LastName = userToUpdate.LastName,
+                Email = userToUpdate.Email,
+                PhoneNumber = userToUpdate.PhoneNumber,
+                Street = userToUpdate.Street,
+                HouseNumber = userToUpdate.HouseNumber,
+                ApartmentNumber = userToUpdate.ApartmentNumber,
+                PostalCode = userToUpdate.PostalCode,
+                City = userToUpdate.City
+            };
+            return View(user);
         }
 
         // GET: User/Create
